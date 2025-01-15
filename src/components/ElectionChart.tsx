@@ -11,14 +11,14 @@ const data = [
 
 export default function ElectionChart() {
   return (
-    <Card className="p-6">
-      <h3 className="text-lg font-semibold mb-4">Current Election Statistics</h3>
+    <Card className="p-4 md:p-6">
+      <h3 className="text-base md:text-lg font-semibold mb-4">Current Election Statistics</h3>
       <div className="h-[300px] w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data}>
+          <BarChart data={data} margin={{ top: 5, right: 5, bottom: 5, left: 0 }}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+            <YAxis tick={{ fontSize: 12 }} />
             <Tooltip />
             <Bar dataKey="votes" fill="#9b87f5" />
           </BarChart>
